@@ -10,7 +10,9 @@
             <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     @forelse ($users as $user)
-                        <p>{{ $user->name }}</p>
+                        <p>
+                            <a href="{{ route('chat', $user->id) }}">{{ $user->name }}</a>
+                        </p>
                     @empty
                         <h2>No User found.</h2>
                     @endforelse
